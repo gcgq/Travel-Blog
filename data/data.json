@@ -1,0 +1,35 @@
+[
+  {
+    "career": [
+      {
+        "title": "5 Questions To Ask Yourself Before Writing Your Personal Statement",
+        "post": "I'm not sure about how you guys feel about talking about yourselves, but, this is something that is very hard for me to do. Because I have a difficult time with this, writing my personal statement was the most daunting part of the grad school application process. I created a list of questions to ask myself to help me brainstorm.",
+        "image": "./img/career/career-01.png"
+      },
+      {
+        "title": "3 Ways To Beef Up Your CV",
+        "post": "A CV or Curriculum Vitae is basically your academic resume. Most graduate programs will ask for this in addition to or instead of your resume. This is your time to show off all of the hard work you did in school. Highlight any valuable work experiences, training's, certifications, awards, presentations and publications. If you do not have much on you CV, there are a few things that you can do to beef it up a bit.",
+        "image": "./img/career/career-02.png"
+      }
+    ],
+    "lifestyle": [
+      {
+        "title": "Glass Slipper Project 2016",
+        "post": "I remember how important prom was to me and my friends when I was in high school. It is one day where you can get totally dolled up and glammed out. For me, prom was the closest thing to being on the Red Carpet at the Grammy's as I could get. Before you leaving to go to the actual event, family and friends gather to come see you off. You are the center of attention amongst your family and friends on that day.",
+        "image": "./img/lifestyle/lifestyle-01.png"
+      }
+    ],
+    "travel": [
+      {
+        "title": "Wisconsin | Relax, Reflect, Regroup",
+        "post": "Over the past year I have gone out of town a few times. As a new traveler, when I go on vacation, my main priorities are: Go, Do, and See. Each time, I had an itinerary that was jam packed with activities because I try to do and see as much as possible when I visit a place for the first time. I had a blast on all of my trips but sometimes one must take a step back to relax, reflect and regroup. Being a budding mental health professional, one very important lesson that you learn early in the game is the importance of practicing self care.",
+        "image": "./img/travel/travel-01.png"
+      },
+      {
+        "title": "3 FREE Apps That Will Save You Money When You Travel",
+        "post": "Hopper also gives you the lowest price to fly for each day of the month approximately 3-6 months from the day that you are looking. I plan to use this feature to book my next vacation.",
+        "image": "./img/travel/travel-02.png"
+      }
+    ]
+  }
+]
