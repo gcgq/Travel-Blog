@@ -1,0 +1,10 @@
+
+  <article ng-repeat="category in categories">
+    <h1>
+      {{blogs[category][blogs[category].length-1].title}}
+    </h1>
+    <p>
+      {{blogs[category][blogs[category].length-1].post}}
+    </p>
+    <img ng-src="{{blogs[category][blogs[category].length-1].image}}" alt="">
+  </article>

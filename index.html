@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
@@ -12,36 +14,69 @@
     <script type="text/javascript" src="js/app.js"></script>
   </head>
   <body ng-app="app">
-    <header>
+    <div class="" ng-controller="blogController">
+      <header>
+        <nav class="navbar navbar-default" role="navigation">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#"></a>
+            </div>
 
-    </header>
-    <div ng-controller="blogController" >
-      <article ng-repeat="category in categories">
-        <h1 >
-          {{blogs[category][blogs[category].length-1].title}}
-        </h1>
-        <p>
-          {{blogs[category][blogs[category].length-1].post}}
-        </p>
-        <img ng-src="{{blogs[category][blogs[category].length-1].image}}" alt="">
-      </article>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar">
+              <ul class="nav navbar-nav">
+                <li class="active"><a ng-href="#!/">Home</a></li>
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown">Blog
+                  <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a ng-click="currentCategory=categories[0]" ng-href="#!/career">Career</a></li>
+                    <li><a ng-click="currentCategory=categories[1]" ng-href="#!/lifestyle">Lifestyle</a></li>
+                    <li><a ng-click="currentCategory=categories[2]" ng-href="#!/travel">Travel</a></li>
+                  </ul>
+                </li>
+
+              </ul>
+              <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+              </form>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"></a></li>
+
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </header>
+
+      <section class="container" ng-view>
+
+      </section>
+
+      <footer ng-controller="mailingListSignUp">
+        <div class="">
+          <img src="https://placeholder.com/50x50" alt="">
+        </div>
+        <div class="">
+          <h1>About me</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="">
+          <h1>Join my mailing list</h1>
+          <input type="email" name="email" ng-model="newSubscriber.email" placeholder="Email Address">
+          <button type="button" name="button" class="btn btn-primary" ng-click="signUp(newSubsciber)">Submit</button>
+          <a ng-href="#!/list">(view mailing list)</a>
+        </div>
+      </footer>
     </div>
-
-    <footer ng-controller="mailingListSignUp">
-      <div class="">
-        <img src="https://placeholder.com/50x50" alt="">
-      </div>
-      <div class="">
-        <h1>About me</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      </div>
-      <div class="">
-        <h1>Join my mailing list</h1>
-        <input type="email" name="email" ng-model="newSubscriber.email" placeholder="Email Address">
-        {{newSubscriber.email}}
-        <button type="button" name="button" class="btn btn-primary" ng-click="signUp(newSubsciber)">Submit</button>
-        <pre ng-controller="getMailingList">{{list[0].email}} {{Date(list[0].signUpDate)}} <button type="button" name="button" ng-click="update()"></button></pre>
-      </div>
-    </footer>
   </body>
 </html>

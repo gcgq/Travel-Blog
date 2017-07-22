@@ -17,23 +17,41 @@ var updateList = function(){
   firebase.database().ref('/mailing_list/').on('value',
   function(snapshot){
     snapshot.forEach(function(snapshotChild){
-      l.push(snapshotChild.val());
+      l.push({
+        email: snapshotChild.val().email,
+        signUpDate: new Date(snapshotChild.val().signUpDate)
+      });
     });
   });
   return l;
 };
-list = updateList();
+var list = updateList();
 
-var app = angular.module("app", []);
+var app = angular.module("app", ['ngRoute']);
+
+app.config(['$routeProvider', function($routeProvider){
+    $routeProvider.when("/",  {
+      templateUrl: "templates/main.html"
+    }).when("/career",{
+      templateUrl: "templates/category.html",
+    }).when("/travel",{
+      templateUrl: "templates/category.html"
+    }).when("/lifestyle",{
+      templateUrl: "templates/category.html"
+    }).when("/list",{
+      templateUrl: "templates/mailing-list.html"
+    }).when("/about",{
+      templateUrl: "templates/about.html"
+    });
+}]);
 
 app.controller("blogController", ['$scope', '$http', function($scope, $http){
+  $scope.currentCategory = "";
   $scope.categories = ['career', 'lifestyle', 'travel'];
   $http.get("../data/data.json").then(function(result){
     $scope.blogs = result.data[0];
   });
 }]);
-
-
 
 app.controller("mailingListSignUp", ["$scope", function($scope){
   $scope.newSubscriber = { email: "", signUpDate: null };
@@ -47,9 +65,14 @@ app.controller("mailingListSignUp", ["$scope", function($scope){
 }]);
 
 app.controller("getMailingList", ['$scope', function($scope){
-  $scope.list = []
+  $scope.list = [];
   $scope.update = function(){
     $scope.list = updateList();
-    console.log($scope.list);
   }
 }]);
+
+angular.module("app").directive("listData",function(){
+  return {
+    templateUrl: "../templates/list-data.html"
+  };
+});
