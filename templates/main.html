@@ -1,10 +1,19 @@
+<img src="img/hero.jpg" alt="">
+
+<div class="container">
 
   <article ng-repeat="category in categories">
     <h1>
       {{blogs[category][blogs[category].length-1].title}}
     </h1>
+    <h4>Blog Date</h4>
+    <img ng-src="{{blogs[category][blogs[category].length-1].image}}" alt="">
     <p>
       {{blogs[category][blogs[category].length-1].post}}
     </p>
-    <img ng-src="{{blogs[category][blogs[category].length-1].image}}" alt="">
+    <a type="button" class="btn btn-primary" ng-href="#!/blog/{{category}}">
+      Read More
+    </a>
   </article>
+
+</div>

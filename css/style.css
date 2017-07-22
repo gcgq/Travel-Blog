@@ -1,0 +1,36 @@
+section {
+  margin-bottom: 50px;
+}
+
+.footer{
+  display:block;
+  background: #696969;
+  width = 100%;
+  padding-bottom:50px;
+}
+.footer div{
+  background: #696969;
+  color: #fff;
+}
+
+.footer a {
+  color: #5bc0de;
+}
+
+.footer img{
+  margin-top: 20px;
+}
+
+.footer input {
+  color: black;
+  margin-bottom: 5px;
+}
+
+.footer button {
+  background: #5bc0de;
+}
+
+.footer button,
+.footer input {
+  width: 100%;
+}

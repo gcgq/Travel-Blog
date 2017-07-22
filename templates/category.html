@@ -1,11 +1,12 @@
-<div ng-repeat="article in blogs[currentCategory]">
+<div ng-repeat="article in blogs[currentCategory]" class="container">
   <article class="">
     <h1>
       {{article.title}}
     </h1>
+    <h4>Blog Date</h4>
+    <img ng-src="{{article.image}}" alt="">
     <p>
       {{article.post}}
     </p>
-    <img ng-src="{{article.image}}" alt="">
   </article>
 </div>
