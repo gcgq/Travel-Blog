@@ -32,21 +32,29 @@ var app = angular.module("app", ['ngRoute']);
 app.config(['$routeProvider', function($routeProvider){
     $routeProvider.when("/",  {
       templateUrl: "templates/main.html"
-    }).when("/career",{
+    }).when("/blog/:currentCategory",{
       templateUrl: "templates/category.html",
-    }).when("/travel",{
-      templateUrl: "templates/category.html"
-    }).when("/lifestyle",{
-      templateUrl: "templates/category.html"
+      controller: 'blogController'
     }).when("/list",{
       templateUrl: "templates/mailing-list.html"
     }).when("/about",{
       templateUrl: "templates/about.html"
     });
+
+    // .when("/career",{
+    //   templateUrl: "templates/category.html",
+    //   controller: 'blogController'
+    // }).when("/travel",{
+    //   templateUrl: "templates/category.html",
+    //   controller: 'blogController'
+    // }).when("/lifestyle",{
+    //   templateUrl: "templates/category.html",
+    //   controller: 'blogController'
+    // })
 }]);
 
-app.controller("blogController", ['$scope', '$http', function($scope, $http){
-  $scope.currentCategory = "";
+app.controller("blogController", ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams){
+  $scope.currentCategory = $routeParams.currentCategory;
   $scope.categories = ['career', 'lifestyle', 'travel'];
   $http.get("../data/data.json").then(function(result){
     $scope.blogs = result.data[0];
