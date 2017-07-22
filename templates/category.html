@@ -1,12 +1,14 @@
 <div ng-repeat="article in blogs[currentCategory]" class="container">
-  <article class="">
-    <h1>
-      {{article.title}}
-    </h1>
-    <h4>Blog Date</h4>
-    <img ng-src="{{article.image}}" alt="">
-    <p>
-      {{article.post}}
-    </p>
-  </article>
+  <div class="col-md-10 col-md-offset-1">
+    <article class="">
+      <h1>
+        {{article.title}}
+      </h1>
+      <h4>Blog Date</h4>
+      <img ng-src="{{article.image}}" alt="">
+      <p>
+        {{article.post}}
+      </p>
+    </article>
+  </div>
 </div>
