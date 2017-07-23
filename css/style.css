@@ -1,6 +1,24 @@
 nav h4 {
   padding-right: 15px;
 }
+header, nav, .navbar {
+  margin-bottom:0;
+}
+
+li.camera {
+  background: #5bc0de;
+  border: #499ab3 1px solid;
+  border-radius: 5px;
+  margin:4px;
+}
+
+li.camera a, span.glyphicon {
+  margin:0;
+  padding:4px;
+  color: white;
+  font-size: 130%;
+}
+
 .blog-title{
   background-image: url("../img/hero.jpg");
   width:100%;
@@ -19,6 +37,16 @@ nav h4 {
   font-size: 450%
 }
 
+.probably-deep-quotes{
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.probably-deep-quotes p {
+  width: 100%;
+  text-align: center;
+}
+
 .category-imgs{
   width: 100%;
   display: flex;
@@ -35,15 +63,19 @@ nav h4 {
   height: 150px;
   background-color: #e6e6e6;
 }
+
 .featured p {
   padding-top: 75px;
-  margin-left:50%;
+  text-align: center;
 }
 
 section {
   margin-bottom: 50px;
 }
 
+.aboutme img{
+  margin-top: 55px;
+}
 article img{
   width:100%;
 }
@@ -71,7 +103,7 @@ article img{
   margin-bottom: 5px;
 }
 
-.footer button {
+.footer button, a.btn {
   background: #5bc0de;
 }
 

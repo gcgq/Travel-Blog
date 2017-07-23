@@ -1,20 +1,18 @@
 <div class="blog-title">
-  <!-- <img src="img/hero.jpg" alt=""> -->
   <div class="oh-so-clever">
     <h1>Clever Tagline</h1>
     <h2>Clever statement</h2>
   </div>
 </div>
 
-<div class="center">
-  <p>This is the first sentence...</p>
-  <p>This is the second sentence</p>
+<div class="probably-deep-quotes">
+  <p>This is the first sentence...<br>This is the second sentence</p>
 </div>
 
 <div class="center category-imgs">
-  <img src="http://via.placeholder.com/300x300" alt="">
-  <img src="http://via.placeholder.com/300x300" alt="">
-  <img src="http://via.placeholder.com/300x300" alt="">
+  <img src="http://via.placeholder.com/300x300?text=Career">
+  <img src="http://via.placeholder.com/300x300?text=Lifestyle">
+  <img src="http://via.placeholder.com/300x300?text=Travel">
 </div>
 
 <div class="featured">
@@ -24,19 +22,19 @@
 </div>
 
 <div class="container">
-
-  <article ng-repeat="category in categories">
-    <h1>
-      {{blogs[category][blogs[category].length-1].title}}
-    </h1>
-    <h4>Blog Date</h4>
-    <img ng-src="{{blogs[category][blogs[category].length-1].image}}" alt="">
-    <p>
-      {{blogs[category][blogs[category].length-1].post}}
-    </p>
-    <a type="button" class="btn btn-primary" ng-href="#!/blog/{{category}}">
-      Read More
-    </a>
-  </article>
-
+  <div class="col-md-10 col-md-offset-1">
+    <article ng-repeat="category in categories">
+      <h1>
+        {{blogs[category][blogs[category].length-1].title}}
+      </h1>
+      <h4>Blog Date</h4>
+      <img ng-src="{{blogs[category][blogs[category].length-1].image}}" alt="">
+      <p>
+        {{blogs[category][blogs[category].length-1].post}}
+      </p>
+      <a type="button" class="btn btn-primary" ng-href="#!/blog/{{category}}">
+        Read More
+      </a>
+    </article>
+  </div>
 </div>

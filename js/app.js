@@ -27,31 +27,7 @@ var updateList = function(){
 };
 var list = updateList();
 
-var app = angular.module("app", ['ngRoute']);
-
-app.config(['$routeProvider', function($routeProvider){
-    $routeProvider.when("/",  {
-      templateUrl: "templates/main.html"
-    }).when("/blog/:currentCategory",{
-      templateUrl: "templates/category.html",
-      controller: 'blogController'
-    }).when("/list",{
-      templateUrl: "templates/mailing-list.html"
-    }).when("/about",{
-      templateUrl: "templates/about.html"
-    });
-
-    // .when("/career",{
-    //   templateUrl: "templates/category.html",
-    //   controller: 'blogController'
-    // }).when("/travel",{
-    //   templateUrl: "templates/category.html",
-    //   controller: 'blogController'
-    // }).when("/lifestyle",{
-    //   templateUrl: "templates/category.html",
-    //   controller: 'blogController'
-    // })
-}]);
+var app = angular.module("app", ['routes']);
 
 app.controller("blogController", ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams){
   $scope.currentCategory = $routeParams.currentCategory;
