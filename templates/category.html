@@ -1,17 +1,27 @@
-<div ng-repeat="article in blogs[currentCategory]" class="container">
-  <div class="col-md-10 col-md-offset-1">
-    <article class="">
-      <h1>
-        {{article.title}}
-      </h1>
-      <h4>Blog Date</h4>
-      <img ng-src="{{article.image}}" alt="">
-      <p>
-        {{article.post}}
-      </p>
-    </article>
-    <a type="button" class="btn btn-primary" ng-href="#!/blog/{{currentCategory}}">
-      Read More
-    </a>
+<div class="container">
+  <div class="col-md-10 col-md-offset-1" >
+    <div ng-if="blogs[currentCategory] == null || blogs[currentCategory].length == 0">
+      <h3>
+        There are no blog posts in the "{{currentCategory}}" category
+      </h3>
+    </div>
+    <div ng-if="blogs[currentCategory].length > 0">
+      <h1>{{currentCategory | uppercase}}</h1>
+    </div>
+    <div ng-repeat="article in blogs[currentCategory]" >
+      <article class="">
+        <h2>
+          {{article.title}}
+        </h2>
+        <h4>Blog Date</h4>
+        <img ng-src="{{article.image}}" alt="">
+        <p>
+          {{article.post}}
+        </p>
+      </article>
+      <a type="button" class="btn btn-primary" ng-href="#!/blog/{{currentCategory}}">
+        Read More
+      </a>
+    </div>
   </div>
 </div>
