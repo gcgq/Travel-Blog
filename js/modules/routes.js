@@ -7,7 +7,8 @@ routes.config(['$routeProvider', function($routeProvider){
       templateUrl: "templates/category.html",
       controller: 'blogController'
     }).when("/list",{
-      templateUrl: "templates/mailing-list.html"
+      // templateUrl: "templates/mailing-list.html"
+      template: "<mailing-list></mailing-list>"
     }).when("/about",{
       templateUrl: "templates/about.html"
     });

@@ -27,7 +27,7 @@ var updateList = function(){
 };
 var list = updateList();
 
-var app = angular.module("app", ['routes']);
+var app = angular.module("app", ['routes', 'mailingList', 'blogHeaderFooter']);
 
 app.controller("blogController", ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams){
   $scope.currentCategory = $routeParams.currentCategory;
@@ -36,27 +36,3 @@ app.controller("blogController", ['$scope', '$http', '$routeParams', function($s
     $scope.blogs = result.data[0];
   });
 }]);
-
-app.controller("mailingListSignUp", ["$scope", function($scope){
-  $scope.newSubscriber = { email: "", signUpDate: null };
-  $scope.signUp = function(){
-    $scope.newSubscriber.signUpDate = new Date().getTime();
-    // console.log($scope.newSubscriber);
-    // console.log(Date($scope.newSubscriber.signUpDate));
-    firebase.database().ref('/mailing_list/' + CryptoJS.MD5($scope.newSubscriber.email)).set($scope.newSubscriber);
-    $scope.newSubscriber = { email: "", signUpDate: null }
-  };
-}]);
-
-app.controller("getMailingList", ['$scope', function($scope){
-  $scope.list = [];
-  $scope.update = function(){
-    $scope.list = updateList();
-  }
-}]);
-
-angular.module("app").directive("listData",function(){
-  return {
-    templateUrl: "../templates/list-data.html"
-  };
-});
